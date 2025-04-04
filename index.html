@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charada do Dia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .shake {
+            animation: shake 0.5s;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full fade-in">
+        <h1 class="text-3xl font-bold mb-4 text-blue-600">Charada do dia!?</h1>
+        <div class="min-h-24 flex items-center justify-center">
+            <p class="text-xl text-gray-800 mb-6" id="charada-pergunta">Carregando charada...</p>
+        </div>
+        <div class="mb-6">
+            <input type="text" placeholder="Digite sua resposta..." 
+                   class="border border-gray-300 rounded-lg p-3 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                   id="resposta-input">
+        </div>
+        <div class="min-h-12 flex items-center justify-center mb-5" id="resposta-container">
+            <p class="text-gray-400">Aguardando sua resposta...</p>
+        </div>
+        <div class="flex justify-around gap-4">
+            <button class="bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition flex-1" 
+                    onclick="verResposta()">Ver resposta</button>
+            <button class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition flex-1" 
+                    onclick="novaCharada()">Nova charada</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
